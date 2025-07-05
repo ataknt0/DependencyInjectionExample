@@ -7,7 +7,7 @@ public class ClickCar : MonoBehaviour
     [SerializeField] private ClickUI clickUi;
     [SerializeField] private ClickAudio clickAudio;
     private int clickCount = 0;
-    void Update()
+    private void Update()
     {
         OnClicked();
     }
