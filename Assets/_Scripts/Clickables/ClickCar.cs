@@ -1,15 +1,22 @@
-using Unity.VisualScripting;
 using UnityEngine;
-
+using Zenject;
 public class ClickCar : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private ClickUI clickUi;
-    [SerializeField] private ClickAudio clickAudio;
+    private ClickUI clickUi;
+    private ClickAudio clickAudio;
+    private NonMonoExample nonMonoExample;
     private int clickCount = 0;
     private void Update()
     {
         OnClicked();
+    }
+    [Inject]
+    private void Constructor(ClickUI clickableUI, ClickAudio clickableAudio, NonMonoExample notMonoExample)
+    {
+        clickUi = clickableUI;
+        clickAudio = clickableAudio;
+        nonMonoExample = notMonoExample;
     }
     private void OnClicked()
     {
@@ -18,6 +25,7 @@ public class ClickCar : MonoBehaviour
             clickCount++;
             clickUi.SetText(clickCount);
             clickAudio.SetSound();
+            nonMonoExample.Clicked();
         }
     }
 }
