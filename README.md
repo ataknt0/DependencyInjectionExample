@@ -5,5 +5,5 @@ The video link : https://www.youtube.com/watch?v=PWHBxnWAl28
 
 The project was created using version 6000.0.40f1. It should work on version 6000.x and above, but it may not be compatible with earlier versions.
 
-#How To Download#
+#How To Download
 You can easily click the 'Code' button and then click 'Download ZIP'. Extract the ZIP file and open it with Unity.
